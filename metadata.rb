@@ -10,7 +10,6 @@ depends "apt"
 depends "java"
 depends "apache2"
 depends "php"
-depends "php::module_curl"
 depends "git"
 depends "curl"
 
