@@ -7,6 +7,7 @@ long_description 'Installs/Configures chef-devstax'
 version          '0.1.0'
 
 depends "apt"
+depends "ark"
 depends "java"
 depends "apache2"
 depends "php"
