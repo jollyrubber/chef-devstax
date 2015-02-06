@@ -11,6 +11,7 @@ depends "ark"
 depends "java"
 depends "apache2"
 depends "php"
+depends "python"
 depends "git"
 depends "curl"
 
