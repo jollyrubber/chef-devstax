@@ -39,6 +39,11 @@ powershell_script "install_mssql" do
 	EOH
 end
 
+# open firewall
+chef_devstax_windows_firewall_rule "SQL Server" do
+	port 1433
+end
+
 # clean up
 file local_iso do
 	action :delete
