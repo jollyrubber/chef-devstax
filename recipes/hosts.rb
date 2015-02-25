@@ -1,3 +1,5 @@
+return unless platform?("ubuntu")
+
 unless node["chef-devstax"]["hosts"]
 	Chef::Application.fatal! "chef-devstax.host attribute cannot be nil. Please populate that attribute."
 end

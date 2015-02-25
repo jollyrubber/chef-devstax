@@ -1,3 +1,5 @@
+return unless platform?("ubuntu")
+
 include_recipe "apt"
 include_recipe "java"
 

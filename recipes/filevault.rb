@@ -1,3 +1,5 @@
+return unless platform?("ubuntu")
+
 unless node["chef-devstax"]["filevault"]["url"]
 	Chef::Application.fatal! "chef-devstax.filevault.url attribute cannot be nil. Please populate that attribute."
 end

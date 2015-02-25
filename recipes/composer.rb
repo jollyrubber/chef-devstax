@@ -1,3 +1,5 @@
+return unless platform?("ubuntu")
+
 include_recipe "php"
 include_recipe "php::module_curl"
 include_recipe "git"

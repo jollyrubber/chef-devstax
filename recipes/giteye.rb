@@ -1,3 +1,5 @@
+return unless platform?("ubuntu")
+
 unless node["chef-devstax"]["giteye"]["url"]
 	Chef::Application.fatal! "chef-devstax.giteye.url attribute cannot be nil. Please populate that attribute."
 end

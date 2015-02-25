@@ -10,3 +10,5 @@ cookbook "curl", "~> 2.0.1"
 cookbook "git", "~> 4.1.0"
 cookbook "php", "~> 1.5.6"
 cookbook "python", "~> 1.4.6"
+
+cookbook 'windows', '~> 1.36.1'

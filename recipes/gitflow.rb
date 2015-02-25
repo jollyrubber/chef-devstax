@@ -1,3 +1,5 @@
+return unless platform?("ubuntu")
+
 include_recipe "git"
 
 gitflow_installer = "#{Chef::Config[:file_cache_path]}/gitflow-installer.sh"
