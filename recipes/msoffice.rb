@@ -12,8 +12,8 @@ remote_file local_iso do
 end
 
 # get deployment xml
-config_xml_file = win_friendly_path(File.join(Dir.tmpdir(), 'Config.xml'))
-template config_xml_file do
+config_file = win_friendly_path(File.join(Dir.tmpdir(), 'Config.xml'))
+template config_file do
 	source "Config.xml.erb"
 	variables({
 		:params => {
@@ -34,13 +34,13 @@ powershell_script "install_msoffice" do
 	cwd ps_script_path
 	code <<-EOH
 		Import-Module -Name #{ps_module_path}
-		Install-MSOffice -ImagePath "#{local_iso}" -ConfigFile "#{config_xml_file}"
+		Install-MSOffice -ImagePath "#{local_iso}" -ConfigFile "#{config_file}"
 	EOH
 end
 
 file local_iso do
 	action :delete
 end
-file config_xml_file do
+file config_file do
 	action :delete
 end

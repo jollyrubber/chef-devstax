@@ -13,7 +13,7 @@ remote_file local_iso do
 end
 
 # get configuration ini
-config_file = win_friendly_path(File.join(Chef::Config[:file_cache_path], 'ConfigurationFile.ini'))
+config_file = win_friendly_path(File.join(Dir.tmpdir(), 'ConfigurationFile.ini'))
 template config_file do
 	source "ConfigurationFile.ini.erb"
 	variables({
@@ -24,7 +24,7 @@ template config_file do
 end
 
 # get powershell scripts
-ps_script_path = win_friendly_path(File.join(Chef::Config[:file_cache_path], 'scripts'))
+ps_script_path = win_friendly_path(File.join(Dir.tmpdir(), 'scripts'))
 remote_directory ps_script_path do
 	source "scripts"
 end

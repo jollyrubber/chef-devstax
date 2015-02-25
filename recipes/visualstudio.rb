@@ -12,8 +12,8 @@ remote_file local_iso do
 end
 
 # get deployment xml
-admin_deployment_xml_file = win_friendly_path(File.join(Chef::Config[:file_cache_path], 'AdminDeployment.xml'))
-template admin_deployment_xml_file do
+config_file = win_friendly_path(File.join(Dir.tmpdir(), 'AdminDeployment.xml'))
+template config_file do
 	source "AdminDeployment.xml.erb"
 	variables({
 		:features => {
@@ -31,7 +31,7 @@ template admin_deployment_xml_file do
 end
 
 # get powershell scripts
-ps_script_path = win_friendly_path(File.join(Chef::Config[:file_cache_path], 'scripts'))
+ps_script_path = win_friendly_path(File.join(Dir.tmpdir(), 'scripts'))
 remote_directory ps_script_path do
 	source "scripts"
 end
@@ -42,13 +42,13 @@ powershell_script "install_visual_studio" do
 	cwd ps_script_path
 	code <<-EOH
 		Import-Module -Name #{ps_module_path}
-		Install-VisualStudio -ImagePath "#{local_iso}" -AdminFile "#{admin_deployment_xml_file}"
+		Install-VisualStudio -ImagePath "#{local_iso}" -AdminFile "#{config_file}"
 	EOH
 end
 
 file local_iso do
 	action :delete
 end
-file admin_deployment_xml_file do
+file config_file do
 	action :delete
 end
