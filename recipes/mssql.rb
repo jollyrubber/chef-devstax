@@ -25,15 +25,24 @@ end
 
 # get powershell scripts
 ps_script_path = win_friendly_path(File.join(Chef::Config[:file_cache_path], 'scripts'))
-ps_module_path = win_friendly_path(File.join(ps_script_path, 'MSSQLUnattendedInstall'))
 remote_directory ps_script_path do
 	source "scripts"
 end
 
+# execute install script
+ps_module_path = win_friendly_path(File.join(ps_script_path, 'MSSQLUnattendedInstall'))
 powershell_script "install_mssql" do
 	cwd ps_script_path
 	code <<-EOH
 		Import-Module -Name #{ps_module_path}
 		Install-MSSQL -ImagePath "#{local_iso}" -ConfigurationFile "#{config_file}" -SAPwd "#{sapwd}"
 	EOH
+end
+
+# clean up
+file local_iso do
+	action :delete
+end
+file config_file do
+	action :delete
 end

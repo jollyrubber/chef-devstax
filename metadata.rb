@@ -36,3 +36,4 @@ recipe	"chef-devstax::pythonvhosts", "Add Apache vhosts configured for Python [U
 # windows
 recipe	"chef-devstax::visualstudio", "Install Visual Studio [Windows]"
 recipe	"chef-devstax::mssql", "Install SQL Server [Windows]"
+recipe	"chef-devstax::msoffice", "Install MS Office [Windows]"

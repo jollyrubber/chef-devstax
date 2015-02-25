@@ -1,0 +1,2 @@
+default['chef-devstax']['msoffice']['2013']['professional']['iso']['url'] = "http://care.dlservice.microsoft.com/dl/download/2/9/C/29CC45EF-4CDA-4710-9FB3-1489786570A1/OfficeProfessionalPlus_x64_en-us.img"
+default['chef-devstax']['msoffice']['2013']['professional']['iso']['checksum']  = "2a31129a9d85896baf3eaf0a9380232cb16de0fb339675fe2405be22852612b0"
