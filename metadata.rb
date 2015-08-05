@@ -18,6 +18,7 @@ depends "php"
 depends "python"
 depends "git"
 depends "curl"
+depends "mysql"
 
 # windows
 depends	"windows"
@@ -28,6 +29,7 @@ recipe	"chef-devstax::eclipse_prereqs", "Install required apt packages for Eclip
 recipe	"chef-devstax::filevault", "Install Apache FileVault[Ubuntu]"
 recipe	"chef-devstax::giteye", "Install GitEye git client [Ubuntu]"
 recipe	"chef-devstax::gitflow", "Install git flow [Ubuntu]"
+recipe	"chef-devstax::mysql", "Install MySQL Client & Server"
 recipe	"chef-devstax::hosts", "Update the hosts file [Ubuntu]"
 recipe	"chef-devstax::ondrej_ppa", "Add the Ondřej Surý PHP personal package archive (PPA) to apt-get [Ubuntu]"
 recipe	"chef-devstax::phpvhosts", "Add Apache vhosts configured for PHP [Ubuntu]"
