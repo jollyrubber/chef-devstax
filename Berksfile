@@ -12,4 +12,4 @@ cookbook "php", "~> 1.7.0"
 cookbook "python", "~> 1.4.6"
 cookbook "mysql", "~> 6.0.13"
 
-cookbook 'windows', '~> 1.38.1'
+cookbook 'windows', '~> 1.38.2'

@@ -4,7 +4,7 @@ maintainer_email 'juan.ayala.tech@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures chef-devstax'
 long_description 'Installs/Configures chef-devstax'
-version          '0.2.0'
+version          '0.3.0'
 
 supports "ubuntu"
 supports "windows"
